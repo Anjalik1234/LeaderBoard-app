@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/users';
+const API_URL = 'https://leaderboard-app-oozm.onrender.com/api/users';
 
 export const getAllUsers = async () => {
   const res = await axios.get(API_URL);
