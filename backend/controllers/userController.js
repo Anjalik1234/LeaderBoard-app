@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const ClaimHistory = require("../models/ClaimHistory");
+const ClaimHistory = require("../models/claimHistory");
 
 // ✅ Get all users
 const getUsers = async (req, res) => {
