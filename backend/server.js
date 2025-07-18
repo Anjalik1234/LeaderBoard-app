@@ -4,7 +4,6 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const userRoutes = require("./routes/userRoutes");
 
-
 dotenv.config(); // Load environment variables
 
 const app = express();
@@ -16,15 +15,6 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("MongoDB Connected"))
   .catch(err => console.log(err));
 
-app.listen(5000, () => console.log("Server running on port 5000"));
+const port = process.env.PORT || 5000;
 
-
-const path = require("path");
-
-// Serve React build files
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/build", "index.html"));
-});
-
+app.listen(port, () => console.log(`Server running on port ${port}`));
